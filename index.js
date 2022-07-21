@@ -45,15 +45,54 @@ see if you can figure out how to render an <ul> with 2+ <li>s inside*/
 // import React from "react"
 // import ReactDOM from "react-dom"
 
-const page = (
-    <div>
-        <img src="./react-logo.png" width = "40px" />
-        <h1>Fun facts about React</h1>
-        <ul>
-            <li>Was first released in 2013</li>
-            <li>Was originally created by Jordan Walke</li>
-        </ul>
-    </div>
-)
+// import { Header } from "./Header";
 
-ReactDOM.render(page, document.getElementById("root"))
+function Header() {
+    return (
+        <header>
+            <nav className="nav">
+                <img className="img" src="./react-logo.png" />
+                <ul className="nav-items">
+                    <li>Pricing</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+    )
+}
+
+function Footer() {
+    return (
+        <footer>
+            <small>2022 Dodt development. All rights reserved</small>
+        </footer>
+    )
+}
+
+function MainText() {
+    return (
+        <div>
+            <h1>Fun facts about React</h1>
+            <ul>
+                <li>Was first released in 2013</li>
+                <li>Was originally created by Jordan Walke</li>
+                <li>Has well over 100K stars on GitHub</li>
+                <li>Is maintained by Facebook</li>
+                <li>Powers thousands of enterprise apps, including mobile apps</li>
+            </ul>
+        </div>
+    )
+}
+
+function Page() {
+    return (
+        <div>
+            <Header />
+            <MainText />
+            <Footer />
+        </div>
+    )
+}
+
+ReactDOM.render(<Page />, document.getElementById("root"))
